@@ -4,3 +4,4 @@ numpy
 plotly
 python-dotenv
 openai
+openpyxl
