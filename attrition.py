@@ -326,7 +326,7 @@ with tabs[1]:
     if "meta.location" in pred_df.columns:
         df_loc = pred_df.groupby("meta.location")["totalScore"].mean().reset_index()
         df_loc.rename(columns={"meta.location":"Location","totalScore":"AvgRisk"}, inplace=True)
-        fig = px.bar(df_loc, x="Location", y="AvgRisk", title="Attrition Rate by Location")
+        fig = px.bar(df_loc, x="Location", y="AvgRisk", title="Attrition Risk by Location")
         fig.update_layout(height=360)
         st.plotly_chart(fig, use_container_width=True)
 
@@ -334,7 +334,7 @@ with tabs[1]:
     if "meta.competency" in pred_df.columns:
         df_c = pred_df.groupby("meta.competency")["totalScore"].mean().reset_index()
         df_c.rename(columns={"meta.competency":"Competency","totalScore":"AvgRisk"}, inplace=True)
-        fig2 = px.bar(df_c, x="Competency", y="AvgRisk", title="Attrition Rate by Technology / Competency")
+        fig2 = px.bar(df_c, x="Competency", y="AvgRisk", title="Attrition Risk by Technology / Competency")
         fig2.update_layout(height=360)
         st.plotly_chart(fig2, use_container_width=True)
 
